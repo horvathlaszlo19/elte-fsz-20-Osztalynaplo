@@ -1,0 +1,48 @@
+.                                          (I)═════════════════════════════════╗
+.                                           ║          <<Java Class>>          ║                                                              (E)─────────────────────╮
+.  (C)━━━━━━━━━━━━━━━━━┓                    ║              School              ║                 (C)━━━━━━━━━━━━━━━━━━━━━━━━━┓                 │ <<Java ENUMERATION>> │
+.   ┃  <<Java Class>>  ┃                    ╠══════════════════════════════════╣                  ┃      <<Java Class>>      ┃                 │       Subject        │
+.   ┃ ElementarySchool ┃                    ║          name : string           ║                  ┃        HighSchool        ┃                 ├──────────────────────┤
+.   ┣━━━━━━━━━━━━━━━━━━┫                    ║            id : int              ║                  ┣━━━━━━━━━━━━━━━━━━━━━━━━━━┫                 │      MATEK : Subject │
+.   ┗━━━━━━━━━━━━━━━━━━┛                    ║          city : String           ║                  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛                 │   IRODALOM : Subject │
+.                                           ║       daycare : bool             ║                                                               │ TÖRTÉNELEM : Subject │
+.                                           ║ SchoolClasses : SchoolClasses[]  ║                                                               │   FÖLDRAJZ : Subject │
+.                                           ╚══════════════════════════════════╝                                                               │      KÉMIA : Subject │
+.                                                                                                                                              │           ...        │
+.                                                                                                                                              ├──────────────────────┤
+.                                                                                                                                              │ Subject()            │
+.                                                                                                                                              ╰──────────────────────╯
+.
+.
+.
+.
+.
+.
+.
+.                                             (C)━━━━━━━━━━━━━━━━━━━━━┓                       (C)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓            (C)━━━━━━━━━━━━━━━━━━━━━━━━┓
+.                                              ┃     <<Java Class>>   ┃                        ┃          <<Java Class>>         ┃             ┃      <<Java Class>>     ┃
+.                                              ┃       SchoolClass    ┃                        ┃              Student            ┃             ┃           Grade         ┃
+.                                              ┣━━━━━━━━━━━━━━━━━━━━━━┫                        ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫             ┣━━━━━━━━━━━━━━━━━━━━━━━━━┫
+.                                              ┃   school : School    ┃                        ┃        grades : Grade[]         ┃             ┃ subject : Subject       ┃
+.                                              ┃ students : Student[] ┃                        ┃           GPA : float           ┃             ┃   value : GradeValue    ┃
+.                                              ┃ teachers : Teacher[] ┃                        ┃ SchoolClasses : SchoolClasses[] ┃             ┃    date : LocalDateTime ┃
+.                                              ┗━━━━━━━━━━━━━━━━━━━━━━┛                        ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛             ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+.
+.
+.
+.
+.
+.
+.
+.                                                                                                  (I)═══════════════════╗                     (E)─────────────────────╮
+.                                                                                                   ║   <<Java Class>>   ║                      │ <<Java ENUMERATION>> │
+.                                        (C)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓                       ║       Person       ║                      │      GradeValue      │
+.                                         ┃          <<Java Class>>         ┃                       ╠════════════════════╣                      ├──────────────────────┤
+.                                         ┃              Teacher            ┃                       ║     name : string  ║                      │ 1                    │
+.                                         ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫                       ║      sex : bool    ║                      │ 2                    │
+.                                         ┃       subject : Subject         ┃                       ║      age : int     ║                      │ 3                    │
+.                                         ┃ SchoolClasses : SchoolClasses[] ┃                       ║       id : String  ║                      │ 4                    │
+.                                         ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛                       ║ password : String  ║                      │ 5                    │
+.                                                                                                   ╚════════════════════╝                      ├──────────────────────┤
+.                                                                                                                                               │ GradeValue()         │
+.                                                                                                                                               ╰──────────────────────╯
