@@ -7,7 +7,7 @@
 
 ## Osztálydiagram
 
-    ![Osztálydiagram](relative/path/to/UML_Class_Diagram.png)
+    ![Osztálydiagram](UML_Class_Diagram.png)
 
 ## Osztályok leírása
 
