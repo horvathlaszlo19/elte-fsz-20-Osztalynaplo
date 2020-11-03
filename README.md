@@ -7,7 +7,7 @@
 
 ## Osztálydiagram
 
-    ![Osztálydiagram](img/UML_Class_Diagram.png)
+    ![Osztálydiagram](img/classbookUML.png)
 
 ## Osztályok leírása
 
@@ -31,6 +31,7 @@
         age: Személy életkora.
         id: Generált egyedi azonosító (id, generated value).
         password: Rendszerbe való bejelentkezéshez használt jelszó.
+		username: A személy felhasználó neve.
 
     Teacher
         Person osztály leszármazottja.
