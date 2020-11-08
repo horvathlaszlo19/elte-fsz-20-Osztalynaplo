@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -20,6 +21,10 @@ public class Student{
 	private String username;
 	@NotEmpty
 	private String password;
+	
+	private double GPA;
+	@ManyToOne
+	private SchoolClass studentSchoolClass;
 	
 	Student(){}
 	
@@ -84,7 +89,21 @@ public class Student{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public double getGPA() {
+		return GPA;
+	}
+
+	public void setGPA(double GPA) {
+		this.GPA = GPA;
+	}
 	
+	public SchoolClass getStudentSchoolClass () {
+		return studentSchoolClass;
+	}
 	
+	public void setStudentSchoolClass (SchoolClass studentSchoolClass) {
+		this.studentSchoolClass = studentSchoolClass;
+	}
 
 }
