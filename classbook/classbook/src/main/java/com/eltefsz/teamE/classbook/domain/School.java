@@ -13,13 +13,13 @@ public class School {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	protected int id;
 
-	private String name;
+	protected String name;
 	
-	private String city;
+	protected String city;
 	
-	private boolean daycare;
+	protected boolean daycare;
 	
 	
 	@OneToMany(mappedBy = "school")

@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.ManyToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -28,8 +28,8 @@ public class SchoolClass {
 	@OneToMany(mappedBy = "studentSchoolClass")
 	private List<Student> students;
 
-	/*@ManyToMany(mappedBy = "schoolClass")
-	private List<Teacher> teachers;*/
+	@ManyToMany(mappedBy = "teacherSchoolClasses")
+	private List<Teacher> teachers;
 	
 	SchoolClass () {}
 	public SchoolClass(int id, String name, int schoolYear, School school) {
@@ -61,12 +61,12 @@ public class SchoolClass {
 		this.students = students;
 	}
 	
-	/*public List<Teacher> getTeachers () {
+	public List<Teacher> getTeachers () {
 		return teachers;
 	}
 	public void setTeachers (List<Teacher> teachers) {
 		this.teachers = teachers;
-	}*/
+	}
 
 	public String getName() {
 		return name;

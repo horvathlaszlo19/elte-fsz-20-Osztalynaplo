@@ -2,7 +2,18 @@ package com.eltefsz.teamE.classbook.domain;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Grade {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 
 	private Subject subject;
 	
@@ -10,12 +21,23 @@ public class Grade {
 	
 	private LocalDateTime date;
 	
+	@ManyToOne
+	private Student gradeStudent;
+	
 	public Grade () {}
 	public Grade(Subject subject, GradeValue value, LocalDateTime date) {
 		super();
 		this.subject = subject;
 		this.value = value;
 		this.date = date;
+	}
+	
+	public long getId () {
+		return id;
+	}
+	
+	public void setId (long id) {
+		this.id = id;
 	}
 
 	public Subject getSubject() {
@@ -41,4 +63,13 @@ public class Grade {
 	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
+	
+	public Student getGradeStudent() {
+		return gradeStudent;
+	}
+	
+	public void setGradeStudent(Student gradeStudent) {
+		this.gradeStudent = gradeStudent;
+	}
+	
 }
