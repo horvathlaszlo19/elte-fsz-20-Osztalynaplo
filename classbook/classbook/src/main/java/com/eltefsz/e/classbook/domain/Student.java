@@ -1,4 +1,4 @@
-package com.eltefsz.teamE.classbook.domain;
+package com.eltefsz.e.classbook.domain;
 
 import java.util.List;
 

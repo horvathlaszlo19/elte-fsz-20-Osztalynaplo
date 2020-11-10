@@ -1,4 +1,4 @@
-package com.eltefsz.teamE.classbook;
+package com.eltefsz.e.classbook;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
