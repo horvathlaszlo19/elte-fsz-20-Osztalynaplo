@@ -1,4 +1,69 @@
-table ,th, td{
-	border: 1px solid black;
-	padding: 15px;
+:root {
+    --default: rgb(50, 50, 50);
+    --hover: rgb(30, 30, 30);
+    --button: rgb(0, 100, 255);
+    --background: rgb(70, 70, 70);
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    background-color: var(--background);
+    color: white;
+}
+
+main{
+    width: 60vw;
+    margin: 50px auto;
+    background-color: var(--default);
+    padding: 20px;
+}
+
+.formElement {
+	padding: 10px;
+}
+
+
+/* NAVBAR */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--default);
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: var(--hover);
+    color: var(--button);
+}
+
+
+/* Table */
+table{
+    border-collapse: collapse;
+    -webkit-user-select: none;
+    width: 90%;
+    margin: auto;
+}
+tr:hover{
+    background-color: var(--hover);
+}
+th{
+    padding: 10px;
+}
+td{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    text-align: center;
+    padding: 10px;
 }
