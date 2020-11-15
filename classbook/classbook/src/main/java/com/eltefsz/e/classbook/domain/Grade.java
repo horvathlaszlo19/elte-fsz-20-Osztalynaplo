@@ -25,11 +25,12 @@ public class Grade {
 	private Student gradeStudent;
 	
 	public Grade () {}
-	public Grade(Subject subject, GradeValue value, LocalDateTime date) {
+	public Grade(Subject subject, GradeValue value, LocalDateTime date, Student gradeStudent) {
 		super();
 		this.subject = subject;
 		this.value = value;
 		this.date = date;
+		this.gradeStudent = gradeStudent;
 	}
 	
 	public long getId () {
