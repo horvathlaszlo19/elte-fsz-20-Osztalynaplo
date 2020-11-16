@@ -1,5 +1,7 @@
 package com.eltefsz.e.classbook.domain;
 
+import javax.persistence.Entity;
+
 public class HighSchool extends School {
 	
 	protected boolean daycare = false;
