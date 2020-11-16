@@ -25,19 +25,19 @@ public class VerificationController {
 	public String loginVarify(Model model, @RequestParam("username") String username, @RequestParam("password") String password) {
 		
 		
-		if ( studentService.findStudent(username, password).isPresent() ) {
+		if ( studentService.findStudentOptional(username, password).isPresent() ) {
 			
-			Student student = studentService.findStudent(username, password).get();
+			Student student = studentService.findStudent(username, password);
 			model.addAttribute("student", student);
 			model.addAttribute("studentName", student.getName());
-			model.addAttribute("studentGrades", studentService.getGrades(student.getId()));
+			model.addAttribute("studentGrades", studentService.getGrades(student));
 			
 			return "student";
 			
-		} else if ( teacherService.findTeacher(username, password).isPresent() ) {
+		} else if ( teacherService.findTeacherOptional(username, password).isPresent() ) {
 			
-			model.addAttribute("teacher", teacherService.findTeacher(username, password).get());
-			model.addAttribute("teacherName", teacherService.findTeacher(username, password).get().getName());
+			model.addAttribute("teacher", teacherService.findTeacher(username, password));
+			model.addAttribute("teacherName", teacherService.findTeacher(username, password).getName());
 			model.addAttribute("subjects", Subject.values());
 			model.addAttribute("values", GradeValue.values());
 			

@@ -24,8 +24,8 @@ public class AddGradeController {
 	public String teacherAddsGrade(Model model, @RequestParam("student") Long id, 
 			@RequestParam("subject") Subject subject, @RequestParam("value") GradeValue value) {
 		
-		if ( studentService.findStudentById(id).isPresent() ) {
-			gradeService.addGrade(subject, value, studentService.findStudentById(id).get());
+		if ( studentService.findStudentByIdOptional(id).isPresent() ) {
+			gradeService.addGrade(subject, value, studentService.findStudentByIdOptional(id).get());
 			model.addAttribute("msg", "successful transaction");
 		} else {
 			model.addAttribute("msg", "Error: This student ID does not exist. Try again.");
