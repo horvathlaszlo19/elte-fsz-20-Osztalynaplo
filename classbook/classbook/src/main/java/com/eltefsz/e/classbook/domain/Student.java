@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Student extends Person {
@@ -18,6 +19,11 @@ public class Student extends Person {
 	private List<Grade> grades;
 	
 	
+	public Student() {}
+	public Student(int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
+			@NotEmpty String password) {
+		super();
+	}
 
 	public double getGPA() {
 		return GPA;

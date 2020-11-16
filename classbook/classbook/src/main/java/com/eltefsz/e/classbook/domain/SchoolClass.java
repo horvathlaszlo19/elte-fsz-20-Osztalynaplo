@@ -31,10 +31,9 @@ public class SchoolClass {
 	@ManyToMany(mappedBy = "teacherSchoolClasses")
 	private List<Teacher> teachers;
 	
-	SchoolClass () {}
-	public SchoolClass(int id, String name, int schoolYear, School school) {
+	public SchoolClass () {}
+	public SchoolClass(String name, int schoolYear, School school) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.schoolYear = schoolYear;
 		this.school = school;

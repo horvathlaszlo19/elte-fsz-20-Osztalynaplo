@@ -27,9 +27,8 @@ public class School {
 	
 	
 	public School () {}
-	public School(int id, String name, String city, boolean daycare) {
+	public School(String name, String city, boolean daycare) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.city = city;
 		this.daycare = daycare;

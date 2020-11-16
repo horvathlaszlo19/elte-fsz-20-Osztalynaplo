@@ -23,10 +23,9 @@ public class Person {
 	
 	
 	public Person() {}
-	public Person(long id, int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
+	public Person(int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
 			@NotEmpty String password) {
 		super();
-		this.id = id;
 		this.age = age;
 		this.sex = sex;
 		this.name = name;
