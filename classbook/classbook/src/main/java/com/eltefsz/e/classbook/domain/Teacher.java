@@ -17,10 +17,9 @@ public class Teacher extends Person {
 	
 	
 	public Teacher() {}
-	public Teacher(long id, int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
+	public Teacher(int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
 			@NotEmpty String password, Subject subject) {
 		super();
-		this.id = id;
 		this.age = age;
 		this.sex = sex;
 		this.name = name;
