@@ -2,18 +2,18 @@ package com.eltefsz.e.classbook.service;
 
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
-=======
+
+
 import java.util.Optional;
->>>>>>> acea427f539e142a059c6c66318e95375c82c1fe
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
-=======
+
+
 import com.eltefsz.e.classbook.domain.Grade;
->>>>>>> acea427f539e142a059c6c66318e95375c82c1fe
+
 import com.eltefsz.e.classbook.domain.Student;
 import com.eltefsz.e.classbook.repository.StudentRepository;
 
@@ -23,13 +23,6 @@ public class StudentService {
 	@Autowired
 	private StudentRepository studentRepository;
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
-	public Optional<Student> findStudentById(Long id) {
-		return studentrepo.findById(id);
-=======
 	
 	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
 	public Optional<Student> findStudentByIdOptional(Long id) {
@@ -39,7 +32,7 @@ public class StudentService {
 	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
 	public Optional<Student> findStudentOptional(String username, String password) {
 		return studentRepository.findByUsernameAndPassword(username, password);
->>>>>>> 6fcd9924c4b4a1271f1b338200348356b98c992f
+
 	}
 	
 	public void addStudent(int age, boolean sex, String name, String username, String password) {
@@ -77,5 +70,4 @@ public class StudentService {
 	//public SchoolClass getSchoolClass(Student student) {}
 	
 
->>>>>>> acea427f539e142a059c6c66318e95375c82c1fe
 }
