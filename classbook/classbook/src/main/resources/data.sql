@@ -3,7 +3,7 @@ insert into School_Class(id,name,school_Year,school_id) values (2,'a',9,1);
 insert into School_Class(id,name,school_Year,school_id) values (3,'b',9,1);
 
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID) values (4,'Anna','anna','anna',12,false,0,2);
-insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID) values (5,'Béla','bela','bela',13,false,0,2); -- Bela fiu
+insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID) values (5,'Béla','bela','bela',13,true,0,2); -- Bela fiu
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID) values (6,'Cecil','cecil','cecil',14,false,0,3);
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID) values (7,'Jenõ','jeno','jeno',12,true,0,3);
 
