@@ -7,5 +7,7 @@ import com.eltefsz.e.classbook.domain.Grade;
 
 @Repository
 public interface GradeRepository extends CrudRepository<Grade, Long> {
+	
+	
 
 }
