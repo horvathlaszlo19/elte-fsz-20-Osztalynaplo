@@ -2,14 +2,13 @@ package com.eltefsz.e.classbook.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.eltefsz.e.classbook.domain.GradeValue;
-import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.service.GradeService;
 import com.eltefsz.e.classbook.service.StudentService;
+import com.eltefsz.e.classbook.webdomain.AddGrade;
 
 @Controller
 public class AddGradeController {
@@ -20,18 +19,14 @@ public class AddGradeController {
 	@Autowired
 	private StudentService studentService;
 	
-	@PostMapping("/AddGrade")
-	public String teacherAddsGrade(Model model, @RequestParam("student") Long id, 
-			@RequestParam("subject") Subject subject, @RequestParam("value") GradeValue value) {
+	@GetMapping("/addgrade/{id}")
+	public String addGrade(@PathVariable("id") long id,AddGrade addgrade) {
+		return "add-grade";
+	}
 		
-		if ( studentService.findStudentByIdOptional(id).isPresent() ) {
-			gradeService.addGrade(subject, value, studentService.findStudentByIdOptional(id).get());
-			model.addAttribute("msg", "successful transaction");
-		} else {
-			model.addAttribute("msg", "Error: This student ID does not exist. Try again.");
-		}
-		
-		return "teacher";
-		
+	@PostMapping("addgrade")
+	public String teacherAddGrade(AddGrade addgrade) {
+		gradeService.addGrade(addgrade.getSubject(),addgrade.getGradeValue(),studentService.findStudentById(addgrade.getId()));
+		return "redirect:teacher";
 	}
 }
