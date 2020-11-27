@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib  prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,19 +17,11 @@
     </header>
     <main>
 		<h1 style="margin: 0px">Log in</h1>
-	    <form action="/verify" method="POST">
-	        <div class="formElement">
-	            <label for="loginUsername">Username</label>
-	            <input type="text" name="username" id="loginUsername">
-	        </div>
-	        <div class="formElement">
-	            <label for="loginPassword">Password</label>
-	            <input type="password" name="password" id="loginPassword">
-	        </div>
-	        <div class="formElement">
-	            <input type="submit" value="Belépés >>">
-	        </div>
-	    </form>
+        <form:form action="login" method='POST'>    
+            <label> User Name : <input type="text" name="username"/> </label>
+           <label> Password: <input type="password" name="password"/> </label>       
+            <input type="submit" value="Login"/>
+        </form:form>
 	    <div>
 	    	database: <a href="/h2">H2</a>
 	    </div>
