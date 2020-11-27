@@ -26,6 +26,7 @@ public class Teacher extends Person {
 		this.username = username;
 		this.password = password;
 		this.subject = subject;
+		this.userType = UserType.TEACHER;
 	}
 
 

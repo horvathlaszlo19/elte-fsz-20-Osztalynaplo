@@ -1,9 +1,9 @@
 package com.eltefsz.e.classbook.domain;
 
-import javax.persistence.MappedSuperclass;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
 
 @MappedSuperclass
@@ -20,17 +20,19 @@ public class Person {
 	protected String username;
 	@NotEmpty
 	protected String password;
+	protected UserType userType;
 	
 	
 	public Person() {}
 	public Person(int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
-			@NotEmpty String password) {
+			@NotEmpty String password,UserType usertype) {
 		super();
 		this.age = age;
 		this.sex = sex;
 		this.name = name;
 		this.username = username;
 		this.password = password;
+		this.userType = usertype;
 	}
 	
 	public long getId() {
@@ -80,6 +82,14 @@ public class Person {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public UserType getUserType() {
+		return userType;
+	}
+	public void setUserType(UserType userType) {
+		this.userType = userType;
+	}
+	
+	
 	
 	
 }

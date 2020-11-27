@@ -23,6 +23,7 @@ public class Student extends Person {
 	public Student(int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
 			@NotEmpty String password) {
 		super();
+		this.userType=UserType.STUDENT;
 	}
 
 	public double getGPA() {
