@@ -17,3 +17,6 @@ insert into TEACHER_TEACHER_SCHOOL_CLASSES(teachers_id,TEACHER_SCHOOL_CLASSES_ID
 insert into GRADE(id,date,subject,value,GRADE_STUDENT_ID) values (12,'2014-11-11',0,0,4);
 insert into GRADE(id,date,subject,value,GRADE_STUDENT_ID) values (13,'2014-11-12',1,3,4);
 insert into GRADE(id,date,subject,value,GRADE_STUDENT_ID) values (14,'2013-12-13',2,2,4);
+insert into GRADE(id,date,subject,value,GRADE_STUDENT_ID) values (15,'2014-10-21',1,4,4);
+insert into GRADE(id,date,subject,value,GRADE_STUDENT_ID) values (16,'2014-10-23',1,3,4);
+insert into GRADE(id,date,subject,value,GRADE_STUDENT_ID) values (17,'2014-10-26',0,4,4);

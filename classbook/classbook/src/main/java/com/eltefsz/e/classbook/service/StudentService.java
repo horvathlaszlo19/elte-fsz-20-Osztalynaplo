@@ -3,17 +3,13 @@ package com.eltefsz.e.classbook.service;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import java.util.Optional;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
 import com.eltefsz.e.classbook.domain.Grade;
-
+import com.eltefsz.e.classbook.domain.SchoolClass;
 import com.eltefsz.e.classbook.domain.Student;
 import com.eltefsz.e.classbook.repository.StudentRepository;
 
@@ -67,7 +63,19 @@ public class StudentService {
 		return studentRepository.findById(student.getId()).get().getGrades();
 	}
 	
-	//public SchoolClass getSchoolClass(Student student) {}
+	public double calculateGPA(Student student) {
+		List<Integer> a = new ArrayList<Integer>();
+		student.getGrades().forEach(g -> a.add(g.getValue().ordinal()+1));
+		double sum = 0;
+		for(int i: a) sum += i;
+		sum /= a.size();
+		student.setGPA(sum);
+		return sum;
+	}
+	
+	public SchoolClass getSchoolClass(Student student) {
+		return student.getStudentSchoolClass();
+	}
 	
 
 }
