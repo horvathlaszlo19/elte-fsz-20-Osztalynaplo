@@ -35,10 +35,10 @@ public class StudentService {
 
 	}
 	
-	public void addStudent(int age, boolean sex, String name, String username, String password) {
-		Student student = new Student(age, sex, name, username, password);
-		studentRepository.save(student);
-	}
+//	public void addStudent(int age, boolean sex, String name, String username, String password) {
+//		Student student = new Student(age, sex, name, username, password);
+//		studentRepository.save(student);
+//	}
 	
 	public Student findStudentById(Long id) {
 		Student result = new Student();

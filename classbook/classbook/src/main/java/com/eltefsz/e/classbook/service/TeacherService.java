@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.eltefsz.e.classbook.domain.Person;
 import com.eltefsz.e.classbook.domain.Student;
 import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.domain.Teacher;
@@ -35,10 +36,10 @@ public class TeacherService {
 		return teacherRepository.findByUsernameAndPassword(username, password);
 	}
 		
-	public void addTeacher(int age, boolean sex, String name, String username, String password, Subject subject) {
-		Teacher teacher = new Teacher(age, sex, name, username, password, subject);
-		teacherRepository.save(teacher);
-	}
+//	public void addTeacher(int age, boolean sex, String name, String username, String password, Subject subject) {
+//		Teacher teacher = new Teacher(age, sex, name, username, password, subject);
+//		teacherRepository.save(teacher);
+//	}
 
 	public Teacher findTeacherById(Long id) {
 		Teacher result = new Teacher();
@@ -64,5 +65,7 @@ public class TeacherService {
 	}
 	
 	//public List<SchoolClass> getSchoolCLasses(Teacher teacher) {}
+	
+	
 	
 }
