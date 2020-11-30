@@ -16,20 +16,20 @@ public class UserDeatilsService {
 	@Autowired
 	private StudentRepository studentRepository;
 	
-	public UserDetails loadUserByUsername(String username) {
+	//public UserDetails loadUserByUsername(String username) {
 		
 //		User user = userRepository.findByEmail(username);
 //		if (user == null) {
 //			throw new UsernameNotFoundException(username);
 //		}
 		
-		Person person = teacherRepository.findByUsername(username);
-		if(person==null) {
-			throw new UsernameNotFoundException(username);
-		}
-		return new UserPrincipal(person);
+//		Person person = teacherRepository.findByUsername(username);
+//		if(person==null) {
+//			throw new UsernameNotFoundException(username);
+//		}
+		//return new UserPrincipal();
 	}
 	
-}
+
 
 

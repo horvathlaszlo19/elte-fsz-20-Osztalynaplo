@@ -16,7 +16,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     	 	.antMatchers("/css/**").permitAll()        	
     	 	.antMatchers("/h2/**").permitAll()
     	 	.antMatchers("/teacher/**").hasRole("TEACHER")
-//    	 	.antMatchers("/add-hotel/**").hasRole("ADMIN")
+    	 	.antMatchers("/student/**").hasRole("STUDENT")
     	 	.anyRequest().authenticated()        	 
     	.and()
     	 	.csrf().ignoringAntMatchers("/h2/**")

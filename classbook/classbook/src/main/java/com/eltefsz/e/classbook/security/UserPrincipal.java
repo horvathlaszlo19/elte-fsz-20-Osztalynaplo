@@ -23,10 +23,10 @@ public class UserPrincipal implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
-        list.add(new SimpleGrantedAuthority("ROLE_" + person.getUserType()));
-
+        //list.add(new SimpleGrantedAuthority("ROLE_" + person.getUserType()));	
+        GrantedAuthority auth = person.getUserType() == UserType.TEACHER ? Role.ROLE_TEACHER : Role.ROLE_STUDENT;	
+        list.add(auth);
         return list;
-		//return List.of(person.getUserType() == UserType.TEACHER ? Role.ROLE_TEACHER : Role.ROLE_STUDENT);	
 	}
 
 	@Override
