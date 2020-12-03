@@ -1,9 +1,13 @@
 package com.eltefsz.e.classbook.configurison;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+
+import com.eltefsz.e.classbook.security.authSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -17,7 +21,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     	 	.antMatchers("/h2/**").permitAll()
     	 	.antMatchers("/teacher/**").hasRole("TEACHER")
     	 	.antMatchers("/student/**").hasRole("STUDENT")
-    	 	.anyRequest().authenticated()        	 
+    	 	.anyRequest().authenticated()
+    	.and().formLogin().successHandler(authSuccessHandler())
     	.and()
     	 	.csrf().ignoringAntMatchers("/h2/**")
 	 	.and()
@@ -27,6 +32,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     	        	.loginPage("/login").permitAll()
     	        .and()
     		        .logout().permitAll();
+	}
+	
+	@Bean
+	public AuthenticationSuccessHandler authSuccessHandler(){
+	    return new authSuccessHandler();
 	}
 
 }
