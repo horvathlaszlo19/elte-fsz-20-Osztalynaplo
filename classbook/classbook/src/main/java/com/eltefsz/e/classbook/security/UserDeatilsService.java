@@ -34,7 +34,6 @@ public class UserDeatilsService implements UserDetailsService {
 
 	
 	
-	//Talan mukodik???
 	@Override
 	public UserDetails loadUserByUsername(String username){
 		if( studentRepository.findByUsername(username).isPresent() ) {

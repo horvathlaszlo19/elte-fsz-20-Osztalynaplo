@@ -1,8 +1,10 @@
 package com.eltefsz.e.classbook.service;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,13 @@ public class StudentService {
 	@Autowired
 	private StudentRepository studentRepository;
 	
+	@Autowired
+	private SchoolClassService schoolClassService;
+	
+	//TEST
+	public Student findStudentByUniqueUsername(String username) {
+		return studentRepository.findByUsername(username).get();
+	}
 	
 	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
 	public Optional<Student> findStudentByIdOptional(Long id) {
@@ -74,7 +83,11 @@ public class StudentService {
 		return sum;
 	}
 	
-	//MEG NEM TESZTELTEM. LEHET NEM MUKODIK:
+	public String getFormattedGPA(Student student) {
+		DecimalFormat df = new DecimalFormat("#.##");
+		return df.format(this.calculateGPA(student));
+	}
+	
 	public double calculateGPAbySubject(Student student, Subject subject) {
 		List<Integer> a = new ArrayList<Integer>();
 		student.getGrades().forEach(g -> {
@@ -88,7 +101,11 @@ public class StudentService {
 		return sum;
 	}
 	
-	//MEG NEM TESZTELTEM. LEHET NEM MUKODIK:
+	public String getFormattedSubjectGPA(Student student, Subject subject) {
+		DecimalFormat df = new DecimalFormat("#.##");
+ 		return df.format(this.calculateGPAbySubject(student, subject));
+	}
+	
 	public List<Grade> getGradesBySubject(Student student, Subject subject) {
 		List<Grade> gradeList = new ArrayList<Grade>();
 		studentRepository.findById(student.getId()).get().getGrades().forEach(g -> {
@@ -97,6 +114,14 @@ public class StudentService {
 			}
 		});
 		return gradeList;
+	}
+	
+	public Map<String,String> getSubjectGPAs(Student student){
+		Map<String, String> values = new HashMap<String, String>();
+		schoolClassService.getSubjects(this.getSchoolClass(student)).forEach(
+			s -> values.put(s.getName(), this.getFormattedSubjectGPA(student, s))
+		);
+		return values;
 	}
 	
 	public SchoolClass getSchoolClass(Student student) {

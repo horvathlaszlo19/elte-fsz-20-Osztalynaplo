@@ -1,7 +1,9 @@
 package com.eltefsz.e.classbook.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,5 +53,11 @@ public class SchoolClassService {
 	
 	public School getSchool(SchoolClass schoolClass) {
 		return schoolClass.getSchool();
+	}
+	
+	public Map<String,String> getTeachersWithSubjects(SchoolClass schoolClass){
+		Map<String,String> teachersWithSubjects = new HashMap<String,String>();
+		this.getTeachers(schoolClass).forEach(t -> teachersWithSubjects.put(t.getName(), t.getSubject().toString()));
+		return teachersWithSubjects;
 	}
 }

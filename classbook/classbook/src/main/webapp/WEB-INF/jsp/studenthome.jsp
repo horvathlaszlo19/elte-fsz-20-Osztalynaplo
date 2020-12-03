@@ -12,21 +12,33 @@
 	<header>
         <ul>
 			<li><a href="">Home</a></li>
-            <li><a href="/student/subjects?id=4">Subjects</a></li>
-            <li><a href="/student/grades?id=4">Grades</a></li>
-            <li><a href="/student/gpa?id=4">GPA</a></li>
+            <li><a href="/student/subjects">Subjects</a></li>
+            <li><a href="/student/grades">Grades</a></li>
+            <li><a href="/student/gpa">GPA</a></li>
             <li style="float:right;"><a href="/login">Log Out</a></li>
+            <li style="float:right;"><a href="">${ studentName }</a></li>
         </ul> 
     </header>
     <main>
+    	<h1>Welcome ${ studentName }!</h1>
+    	<hr>
     	<table>
 			<tbody>
 		        <tr style="background-color: var(--defalt);">
-		            <th>School</th><th>Class</th><th>Name</th>
-		        </tr>      
-                <tr>
-	                <td>${ studentSchool }</td><td>${ studentClass }</td><td>${ studentName }</td>	            
-	        	</tr>
+		        	<th>Your personal data:</th><th></th>
+		        </tr>
+		        <tr>
+		            <td>Name</td><td>${ studentName }</td>
+		        </tr>    
+	        	<tr>
+		            <td>Class</td><td>${ studentClass }</td>
+		        </tr>
+		        <tr>
+		            <td>School</td><td>${ studentSchool }</td>
+		        </tr>
+		        <tr>
+		            <td>GPA</td><td>${ gpa }</td>
+		        </tr>
 		    </tbody>
 	    </table>
     </main>
