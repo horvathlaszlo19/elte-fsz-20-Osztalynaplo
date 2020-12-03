@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.eltefsz.e.classbook.domain.Student;
+import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.service.SchoolClassService;
 import com.eltefsz.e.classbook.service.StudentService;
 
@@ -21,7 +22,7 @@ public class StudentController {
 	@Autowired
 	private SchoolClassService schoolClassService;
 	
-	@GetMapping("/student/home")
+	@GetMapping(value = {"/student","/student/home"})
 	public String home(Model model, int id) {
 		Student student = studentService.findStudentById((long) id);
 		model.addAttribute("studentName", student.getName());

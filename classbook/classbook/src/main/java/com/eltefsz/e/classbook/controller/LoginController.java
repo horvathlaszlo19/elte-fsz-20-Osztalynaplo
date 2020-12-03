@@ -12,4 +12,10 @@ public class LoginController {
 		return "login";
 	}
 
+	@GetMapping("/")
+	public String index(Model model) {
+		//return "redirect:student";
+		return "redirect:teacher";
+	}
+
 }

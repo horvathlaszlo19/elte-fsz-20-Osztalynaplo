@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.eltefsz.e.classbook.domain.Grade;
 import com.eltefsz.e.classbook.domain.SchoolClass;
 import com.eltefsz.e.classbook.domain.Student;
+import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.repository.StudentRepository;
 
 @Service
@@ -71,6 +72,31 @@ public class StudentService {
 		sum /= a.size();
 		student.setGPA(sum);
 		return sum;
+	}
+	
+	//MEG NEM TESZTELTEM. LEHET NEM MUKODIK:
+	public double calculateGPAbySubject(Student student, Subject subject) {
+		List<Integer> a = new ArrayList<Integer>();
+		student.getGrades().forEach(g -> {
+			if( g.getSubject().equals(subject) ) {
+				a.add(g.getValue().ordinal()+1);
+			}
+		});		
+		double sum = 0;
+		for(int i: a) sum += i;
+		sum /= a.size();
+		return sum;
+	}
+	
+	//MEG NEM TESZTELTEM. LEHET NEM MUKODIK:
+	public List<Grade> getGradesBySubject(Student student, Subject subject) {
+		List<Grade> gradeList = new ArrayList<Grade>();
+		studentRepository.findById(student.getId()).get().getGrades().forEach(g -> {
+			if( g.getSubject().equals(subject) ) {
+				gradeList.add(g);
+			}
+		});
+		return gradeList;
 	}
 	
 	public SchoolClass getSchoolClass(Student student) {

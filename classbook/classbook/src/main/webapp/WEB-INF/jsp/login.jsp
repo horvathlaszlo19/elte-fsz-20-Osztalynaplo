@@ -19,7 +19,7 @@
 		<h1 style="margin: 0px">Log in</h1>
         <form:form action="login" method='POST'>    
             <label> User Name : <input type="text" name="username"/> </label>
-           <label> Password: <input type="password" name="password"/> </label>       
+            <label> Password: <input type="password" name="password"/> </label>       
             <input type="submit" value="Login"/>
         </form:form>
 	    <div>

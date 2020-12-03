@@ -15,6 +15,6 @@ public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 
 	Optional<Teacher> findByUsername(String username);
 
-	
+	Optional<Teacher> findByUsernameAndPassword(String username, String password);
 	
 }

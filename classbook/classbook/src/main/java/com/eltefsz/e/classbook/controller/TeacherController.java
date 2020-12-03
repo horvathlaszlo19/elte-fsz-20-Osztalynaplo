@@ -1,7 +1,5 @@
 package com.eltefsz.e.classbook.controller;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +21,7 @@ public class TeacherController {
 	@Autowired
 	private StudentService studentservice;
 	
-	@GetMapping(value = {"/","/teacher"})
+	@GetMapping(value = {"/teacher"})
 	public String index(Model model) {
 		model.addAttribute("students",teacherservice.allStudent());
 		return "teacher";
