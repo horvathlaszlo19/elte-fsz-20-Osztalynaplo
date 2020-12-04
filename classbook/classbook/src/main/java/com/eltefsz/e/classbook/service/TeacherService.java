@@ -32,9 +32,9 @@ public class TeacherService {
 	private TeacherRepository teacherRepository;
 
 	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
-	public Optional<Teacher> findTeacherOptional(String username, String password) {
-		return teacherRepository.findByUsernameAndPassword(username, password);
-	}
+//	public Optional<Teacher> findTeacherOptional(String username, String password) {
+//		return teacherRepository.findByUsernameAndPassword(username, password);
+//	}
 		
 //	public void addTeacher(int age, boolean sex, String name, String username, String password, Subject subject) {
 //		Teacher teacher = new Teacher(age, sex, name, username, password, subject);
@@ -49,13 +49,13 @@ public class TeacherService {
 		return result;
 	}
 	
-	public Teacher findTeacher(String username, String password) {
-		Teacher result = new Teacher();
-		if( teacherRepository.findByUsernameAndPassword(username, password).isPresent() ) {
-			result = teacherRepository.findByUsernameAndPassword(username, password).get();
-		}
-		return result;
-	}
+//	public Teacher findTeacher(String username, String password) {
+//		Teacher result = new Teacher();
+//		if( teacherRepository.findByUsernameAndPassword(username, password).isPresent() ) {
+//			result = teacherRepository.findByUsernameAndPassword(username, password).get();
+//		}
+//		return result;
+//	}
 	
 	public List<Teacher> getAllTeachers() {
 		Iterable<Teacher> foundTeachers = teacherRepository.findAll();
