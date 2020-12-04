@@ -1,9 +1,12 @@
 package com.eltefsz.e.classbook.configurison;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -15,7 +18,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     	.authorizeRequests()
     	 	.antMatchers("/css/**").permitAll()        	
     	 	.antMatchers("/h2/**").permitAll()
-    	 	.antMatchers("/teacher/**").hasRole("TEACHER")
+    	 	.antMatchers("/teacher/**").access("hasRole('TEACHER')")
     	 	.antMatchers("/student/**").hasRole("STUDENT")
     	 	.anyRequest().authenticated()        	 
     	.and()
@@ -28,6 +31,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     	        .and()
     		        .logout().permitAll();
 }
+	
+//	@Bean
+//    public PasswordEncoder passwordEncode() {
+//    	return new BCryptPasswordEncoder(12);
+//    }
 			
 
 }

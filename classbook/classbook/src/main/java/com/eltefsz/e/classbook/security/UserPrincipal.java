@@ -24,7 +24,8 @@ public class UserPrincipal implements UserDetails{
 		
 		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
         //list.add(new SimpleGrantedAuthority("ROLE_" + person.getUserType()));	
-        GrantedAuthority auth = person.getUserType() == UserType.TEACHER ? Role.ROLE_TEACHER : Role.ROLE_STUDENT;	
+        //GrantedAuthority auth = person.getUserType() == UserType.TEACHER ? Role.ROLE_TEACHER : Role.ROLE_STUDENT;	
+		GrantedAuthority auth = new SimpleGrantedAuthority("ROLE_"+ person.getUserType());
         list.add(auth);
         return list;
 	}

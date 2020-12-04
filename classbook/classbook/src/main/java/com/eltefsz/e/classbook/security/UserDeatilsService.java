@@ -9,27 +9,26 @@ import com.eltefsz.e.classbook.repository.StudentRepository;
 import com.eltefsz.e.classbook.repository.TeacherRepository;
 
 public class UserDeatilsService {
-	
+
 	@Autowired
 	private TeacherRepository teacherRepository;
-	
+
 	@Autowired
 	private StudentRepository studentRepository;
-	
-	//public UserDetails loadUserByUsername(String username) {
+
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-//		User user = userRepository.findByEmail(username);
-//		if (user == null) {
-//			throw new UsernameNotFoundException(username);
-//		}
-		
-//		Person person = teacherRepository.findByUsername(username);
-//		if(person==null) {
-//			throw new UsernameNotFoundException(username);
-//		}
-		//return new UserPrincipal();
+		Person person;
+		try {
+			person = teacherRepository.findByUsername(username);
+		}catch (Exception e) {
+			try {
+				person = studentRepository.findByUsername(username);
+		}catch (Exception ex) {
+			throw new UsernameNotFoundException(username);
+		}
+		}
+
+		return new UserPrincipal(person);
 	}
-	
-
-
-
+}
