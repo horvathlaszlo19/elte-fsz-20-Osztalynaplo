@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.eltefsz.e.classbook.domain.School;
 import com.eltefsz.e.classbook.domain.SchoolClass;
+import com.eltefsz.e.classbook.domain.Student;
 import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.domain.Teacher;
 import com.eltefsz.e.classbook.repository.SchoolClassRepository;
@@ -41,6 +42,10 @@ public class SchoolClassService {
 	
 	public List<Teacher> getTeachers(SchoolClass schoolClass) {
 		return schoolClass.getTeachers();
+	}
+	
+	public List<Student> getStudent(SchoolClass schoolClass){
+		return schoolClass.getStudents();
 	}
 	
 	public List<Subject> getSubjects(SchoolClass schoolClass){

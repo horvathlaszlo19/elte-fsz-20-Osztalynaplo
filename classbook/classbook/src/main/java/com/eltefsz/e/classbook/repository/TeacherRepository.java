@@ -12,8 +12,7 @@ import com.eltefsz.e.classbook.domain.Teacher;
 @Repository
 public interface TeacherRepository extends CrudRepository<Teacher, Long> {
 	
-
-	Optional<Teacher> findByUsername(String username);
+	Teacher findByUsername(String username);
 
 	
 	
