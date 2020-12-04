@@ -19,8 +19,9 @@ main{
     padding: 20px;
 }
 
-.formElement {
-	padding: 10px;
+label {
+	display: block;
+	margin: 20px;
 }
 
 
@@ -53,7 +54,7 @@ table{
     border-collapse: collapse;
     -webkit-user-select: none;
     width: 90%;
-    margin: auto;
+    margin: 30px auto;
 }
 tr:hover{
     background-color: var(--hover);
@@ -66,4 +67,18 @@ td{
     border-top: 1px solid white;
     text-align: center;
     padding: 10px;
+}
+
+
+
+h1{
+	text-decoration: underline;
+	width: max-content;
+	margin: 10px auto;
+}
+hr{
+	height: 20px;
+	background-color: var(--background);
+	margin: 30px -20px;
+	border: none;
 }

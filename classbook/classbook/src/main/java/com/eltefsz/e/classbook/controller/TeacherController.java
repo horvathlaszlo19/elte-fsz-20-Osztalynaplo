@@ -23,7 +23,7 @@ public class TeacherController {
 	@Autowired
 	private StudentService studentservice;
 	
-	@GetMapping(value = {"/","/teacher"})
+	@GetMapping(value = {"/teacher"})
 	public String index(Model model) {
 		model.addAttribute("students",teacherservice.allStudent());
 		return "teacher";

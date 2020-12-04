@@ -11,14 +11,16 @@
 <body>
 	<header>
         <ul>
-			<li><a href="/student/home?id=4">Home</a></li>
-            <li><a href="/student/subjects?id=4">Subjects</a></li>
-            <li><a href="?id=4">Grades</a></li>
-            <li><a href="/student/gpa?id=4">GPA</a></li>
+			<li><a href="/student/home">Home</a></li>
+            <li><a href="/student/subjects">Subjects</a></li>
+            <li><a href="">Grades</a></li>
+            <li><a href="/student/gpa">GPA</a></li>
             <li style="float:right;"><a href="/login">Log Out</a></li>
         </ul> 
     </header>
     <main>
+    	<h1>Grades</h1>
+    	<hr>
     	<table>
 			<tbody>
 		        <tr style="background-color: var(--defalt);">

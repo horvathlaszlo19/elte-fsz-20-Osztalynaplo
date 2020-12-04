@@ -1,5 +1,6 @@
 package com.eltefsz.e.classbook.domain;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,7 +17,8 @@ public class Person {
 	protected boolean sex;
 	@NotEmpty
 	protected String name;
-	@NotEmpty
+	//@NotEmpty
+	@Column(nullable = false, unique = true)
 	protected String username;
 	@NotEmpty
 	protected String password;

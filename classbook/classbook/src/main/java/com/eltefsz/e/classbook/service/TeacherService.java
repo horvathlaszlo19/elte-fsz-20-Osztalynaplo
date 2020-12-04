@@ -7,9 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eltefsz.e.classbook.domain.Person;
 import com.eltefsz.e.classbook.domain.Student;
-import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.domain.Teacher;
 import com.eltefsz.e.classbook.repository.StudentRepository;
 import com.eltefsz.e.classbook.repository.TeacherRepository;

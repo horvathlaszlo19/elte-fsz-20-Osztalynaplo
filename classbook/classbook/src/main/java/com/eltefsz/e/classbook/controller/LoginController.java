@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 	
-	@GetMapping("/login")
+	@GetMapping(value = {"/", "/login"}) // Ez legyen az index?
 	public String login(Model model) {
 		return "login";
 	}
