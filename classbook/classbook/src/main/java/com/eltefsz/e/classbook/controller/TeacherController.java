@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.eltefsz.e.classbook.domain.Teacher;
 import com.eltefsz.e.classbook.service.GradeService;
-import com.eltefsz.e.classbook.service.SchoolClassService;
 import com.eltefsz.e.classbook.service.StudentService;
 import com.eltefsz.e.classbook.service.TeacherService;
 
@@ -21,17 +19,13 @@ public class TeacherController {
 	private TeacherService teacherservice;
 	
 	@Autowired
-	private SchoolClassService schoolclassservice;
-	
-	@Autowired
-	private StudentService studentservice;
-	
+	private StudentService studentService;
+		
 	@GetMapping(value = {"/teacher"})
 	public String index(Model model, Principal principal) {
 		Teacher teacher = teacherservice.findTeacherByUniqueUsername(principal.getName());
 		model.addAttribute("teacherName",teacher.getName());
-		model.addAttribute("teacherClasses", teacherservice.getSchoolCLasses(teacher));	
+		model.addAttribute("teacherClasses", teacherservice.getSchoolCLasses(teacher));
 		return "teacher";
 	}
-	
 }

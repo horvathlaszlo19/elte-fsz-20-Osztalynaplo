@@ -37,4 +37,5 @@ public class AddGradeController {
 		gradeService.addGrade(teacher.getSubject(),addgrade.getGradeValue(),studentService.findStudentById(addgrade.getId()));
 		return "redirect:teacher";
 	}
+	
 }

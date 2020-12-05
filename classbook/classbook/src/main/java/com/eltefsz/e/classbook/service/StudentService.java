@@ -30,17 +30,7 @@ public class StudentService {
 		return studentRepository.findByUsername(username);
 	}
 	
-	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
-	public Optional<Student> findStudentByIdOptional(Long id) {
-		return studentRepository.findById(id);
-	}
-	
-	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
-	public Optional<Student> findStudentOptional(String username, String password) {
-		return studentRepository.findByUsernameAndPassword(username, password);
 
-	}
-	
 //	public void addStudent(int age, boolean sex, String name, String username, String password) {
 //		Student student = new Student(age, sex, name, username, password);
 //		studentRepository.save(student);
@@ -50,14 +40,6 @@ public class StudentService {
 		Student result = new Student();
 		if( studentRepository.findById(id).isPresent() ) {
 			result = studentRepository.findById(id).get();
-		}
-		return result;
-	}
-	
-	public Student findStudent(String username, String password) {
-		Student result = new Student();
-		if( studentRepository.findByUsernameAndPassword(username, password).isPresent() ) {
-			result = studentRepository.findByUsernameAndPassword(username, password).get();
 		}
 		return result;
 	}

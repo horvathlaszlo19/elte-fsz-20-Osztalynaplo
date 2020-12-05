@@ -59,6 +59,7 @@ public class TeacherService {
 		return teacher.getTeacherSchoolClasses();
 	}
 	
+	
 	public Teacher findTeacherByUniqueUsername(String username) {
 		return teacherRepository.findByUsername(username);
 	}

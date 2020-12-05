@@ -4,11 +4,11 @@ insert into School_Class(id,name,school_Year,school_id) values (3,'b',9,1);
 
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (4,'Anna','anna','{noop}anna',12,false,0,2,1);
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (5,'Béla','bela','{noop}bela',13,true,0,2,1); 
-insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (6,'Cecil','cecil','cecil',14,false,0,3,1);
+insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (6,'Cecil','cecil','{noop}cecil',14,false,0,3,1);
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (7,'Jenõ','jeno','jeno',12,true,0,3,1);
 
 insert into Teacher(id,name,username,password,age,sex,subject,USER_TYPE) values (8,'Eszter','eszter','{noop}eszter',40,false,0,0);
-insert into Teacher(id,name,username,password,age,sex,subject,USER_TYPE) values (9,'Gábor','gabor','gabor',32,true,2,0);
+insert into Teacher(id,name,username,password,age,sex,subject,USER_TYPE) values (9,'Gábor','gabor','{noop}gabor',32,true,2,0);
 
 insert into TEACHER_TEACHER_SCHOOL_CLASSES(teachers_id,TEACHER_SCHOOL_CLASSES_ID) values (8,2);
 insert into TEACHER_TEACHER_SCHOOL_CLASSES(teachers_id,TEACHER_SCHOOL_CLASSES_ID) values (9,2);

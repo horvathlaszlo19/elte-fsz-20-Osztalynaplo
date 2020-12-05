@@ -22,7 +22,9 @@
 		<details>
 			<summary>${class.name}</summary>
 			<c:forEach items="${class.students}" var="student">
-					<div><a href="addgrade/${student.id}">${student.name}</a></div>
+					<div>
+						<a href="addgrade/${student.id}">${student.name}</a>
+					</div>
 			</c:forEach>
 		</details>
 	</c:forEach>
