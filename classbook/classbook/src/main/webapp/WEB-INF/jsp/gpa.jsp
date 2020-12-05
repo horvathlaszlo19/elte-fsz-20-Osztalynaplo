@@ -16,6 +16,7 @@
             <li><a href="/student/grades">Grades</a></li>
             <li><a href="">GPA</a></li>
             <li style="float:right;"><a href="/login">Log Out</a></li>
+            <li style="float:right;"><a href="">${ studentName }</a></li>
         </ul> 
     </header>
     <main>

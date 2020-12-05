@@ -16,6 +16,7 @@
             <li><a href="">Grades</a></li>
             <li><a href="/student/gpa">GPA</a></li>
             <li style="float:right;"><a href="/login">Log Out</a></li>
+            <li style="float:right;"><a href="">${ studentName }</a></li>
         </ul> 
     </header>
     <main>
@@ -33,6 +34,22 @@
 	            </c:forEach>
 		    </tbody>
 	    </table>
+	    <br><br><br>
+		<c:forEach var="subject_grades_map" items="${ subjectsAndGrades }">
+			<h2>${ subject_grades_map.key }</h2>
+	        <table>
+				<tbody>
+					<tr style="background-color: var(--defalt);">
+			            <th>Subject</th><th>Date</th><th>Grade</th>
+			        </tr>
+					<c:forEach var="subject_grades" items="${ subject_grades_map.value }">
+		                <tr>
+			                <td>${ subject_grades.subject }</td><td>${ subject_grades.date }</td><td>${ subject_grades.value }</td>	  
+			        	</tr>
+		        	</c:forEach>
+			    </tbody>
+		    </table>
+		</c:forEach>
     </main>
     <footer>
     </footer>
