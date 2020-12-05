@@ -18,26 +18,23 @@
 	</header>
 	<main>
 		<h1>Welcome ${ teacherName }</h1>
-
-		<table>
-			<tr>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Age</th>
-			</tr>
-			<c:forEach items="${students}" var="student">
-				<tr>
-					<td>${student.id}</td>
-					<td>${student.name}</td>
-					<td>${student.age}</td>
-					<td><a href="addgrade/${student.id}">New Grade</a></td>
-				</tr>
-
+		
+	<c:forEach items="${teacherClasses}" var="class">
+		<details>
+			<summary>${class.name}</summary>
+			<c:forEach items="${class.students}" var="student">
+					<div><a href="addgrade/${student.id}">${student.name}</a></div>
 			</c:forEach>
+		</details>
+	</c:forEach>
+			
+				
+				
+				
+				
 
-		</table>
+
 
 	</main>
-	<footer> </footer>
 </body>
 </html>

@@ -10,34 +10,8 @@
 <title>Log in</title>
 </head>
 <body>
-	<c:if test="${param.error != null}">
-		<div>Invalid username and password.</div>
-	</c:if>
-	<c:if test="${param.logout != null}">
-		<div>You have been logged out.</div>
-	</c:if>
-	<header>
-		<ul>
-			<li><a href="">Log in</a></li>
-		</ul>
-	</header>
-	<main>
-		<h1 style="margin: 0px">Log in</h1>
-<<<<<<< HEAD
-		<form:form action="login" method='POST'>
-			<label> User Name : <input type="text" name="username" />
-			</label>
-			<label> Password: <input type="password" name="password" />
-			</label>
-			<input type="submit" value="Login" />
-		</form:form>
-		<div>
-			database: <a href="/h2">H2</a>
-		</div>
-		<p>${ errMsg }</p>
-	</main>
-	<footer> </footer>
-=======
+
+<main>
         <form:form action="login" method='POST'>    
             <label> User Name : <input type="text" name="username"/> </label>
             <label> Password: <input type="password" name="password"/> </label>       
@@ -47,9 +21,7 @@
 	    	database: <a href="/h2">H2</a>
 	    </div>
 	    <p>${ errMsg }</p>
-    </main>
-    <footer>
-    </footer>
->>>>>>> cadf1fc13526b3be34ff0dc1048b00acb46ca50e
+</main>
+  
 </body>
 </html>

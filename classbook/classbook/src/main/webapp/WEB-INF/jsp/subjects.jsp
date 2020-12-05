@@ -24,7 +24,7 @@
     	<table>
     		<tbody>
     		<tr style="background-color: var(--defalt);">
-	            <th>Subject Name</th><th>Teacher</th>
+	            <th>Teacher</th><th>Subject</th>
 	        </tr>      
     			<c:forEach var="teacher_subject" items="${ teachersAndSubjects }">	           
 		           	<tr>
