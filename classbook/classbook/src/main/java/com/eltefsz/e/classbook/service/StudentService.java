@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.eltefsz.e.classbook.domain.Grade;
+import com.eltefsz.e.classbook.domain.GradeValue;
 import com.eltefsz.e.classbook.domain.SchoolClass;
 import com.eltefsz.e.classbook.domain.Student;
 import com.eltefsz.e.classbook.domain.Subject;
@@ -128,5 +129,13 @@ public class StudentService {
 		return student.getStudentSchoolClass();
 	}
 	
+	
+	public Map<Subject, List<Grade>> getGradesMap(Student student){
+		Map<Subject, List<Grade>> values = new HashMap<Subject, List<Grade>>();
+		schoolClassService.getSubjects(student.getStudentSchoolClass()).forEach(
+			s -> values.put(s, this.getGradesBySubject(student, s))
+		);
+		return values;
+	}
 
 }

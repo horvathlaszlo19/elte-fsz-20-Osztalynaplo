@@ -33,13 +33,16 @@ public class StudentController {
 	@GetMapping("/student/grades")
 	public String grades(Model model, Principal principal) {
 		Student student = studentService.findStudentByUniqueUsername(principal.getName());
+		model.addAttribute("studentName", student.getName());
 		model.addAttribute("studentGrades", student.getGrades());
+		model.addAttribute("subjectsAndGrades", studentService.getGradesMap(student));
 		return "grades";
 	}
 	
 	@GetMapping("/student/gpa")
 	public String gpa(Model model, Principal principal) {
 		Student student = studentService.findStudentByUniqueUsername(principal.getName());
+		model.addAttribute("studentName", student.getName());
 		model.addAttribute("gpa", studentService.getFormattedGPA(student));
 		model.addAttribute("GPAs", studentService.getSubjectGPAs(student));
 		return "gpa";
@@ -48,6 +51,7 @@ public class StudentController {
 	@GetMapping("/student/subjects")
 	public String subjects(Model model, Principal principal) {
 		Student student = studentService.findStudentByUniqueUsername(principal.getName());
+		model.addAttribute("studentName", student.getName());
 		model.addAttribute("teachersAndSubjects", schoolClassService.getTeachersWithSubjects(studentService.getSchoolClass(student)));
 		return "subjects";
 	}
