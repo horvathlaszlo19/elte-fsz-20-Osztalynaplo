@@ -13,20 +13,18 @@
 	<header>
 		<ul>
 			<li><a href="teacher">Home</a></li>
-			<li><a href="">Classes</a></li>
-			<li><a href="add-grade">Add Grade</a></li>
 			<li style="float: right;"><a href="/login">Log Out</a></li>
 		</ul>
 	</header>
 	<main>
 		<form:form modelAttribute="addGrade" action="/addgrade" method="post">
 			<form:hidden path="id"/>
-			<div>
-				<form:select path="subject">
-					<form:options items="${subjects}" />
-				</form:select>
-			</div>
-			<br>
+<!-- 			<div> -->
+<%-- 				<form:select path="subject"> --%>
+<%-- 					<form:options items="${subjects}" /> --%>
+<%-- 				</form:select> --%>
+<!-- 			</div> -->
+<!-- 			<br> -->
 			<div>
 				<form:select path="gradeValue">
 					<form:options items="${gradeValues}" />

@@ -12,7 +12,6 @@
 	<header>
 		<ul>
 			<li><a href="teacher">Home</a></li>
-			<li><a href="">Classes</a></li>
 			<li style="float: right;"><a href="/login">Log Out</a></li>
 		</ul>
 	</header>
