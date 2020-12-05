@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.eltefsz.e.classbook.security.authSuccessHandler;
@@ -38,5 +40,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	public AuthenticationSuccessHandler authSuccessHandler(){
 	    return new authSuccessHandler();
 	}
+	
+	//PASSWORD ENCODER:
+	//@Bean
+	//public PasswordEncoder passwordEncode() {
+	//	return new BCryptPasswordEncoder();
+	//}
 
 }
