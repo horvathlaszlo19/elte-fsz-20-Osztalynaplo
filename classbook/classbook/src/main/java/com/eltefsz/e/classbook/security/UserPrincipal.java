@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.eltefsz.e.classbook.domain.Person;
@@ -22,13 +23,13 @@ public class UserPrincipal implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
 		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
-<<<<<<< HEAD
+
         //list.add(new SimpleGrantedAuthority("ROLE_" + person.getUserType()));	
         //GrantedAuthority auth = person.getUserType() == UserType.TEACHER ? Role.ROLE_TEACHER : Role.ROLE_STUDENT;	
-		GrantedAuthority auth = new SimpleGrantedAuthority("ROLE_"+ person.getUserType());
-=======
+		//GrantedAuthority auth = new SimpleGrantedAuthority("ROLE_"+ person.getUserType());
+
         GrantedAuthority auth = person.getUserType() == UserType.TEACHER ? Role.ROLE_TEACHER : Role.ROLE_STUDENT;
->>>>>>> cadf1fc13526b3be34ff0dc1048b00acb46ca50e
+
         list.add(auth);
         return list;
 	}
@@ -62,8 +63,6 @@ public class UserPrincipal implements UserDetails{
 	public boolean isEnabled() {
 		return true;
 	}
-
-	
 
 
 }

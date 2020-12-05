@@ -5,14 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-<<<<<<< HEAD
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-=======
+
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.eltefsz.e.classbook.security.authSuccessHandler;
->>>>>>> cadf1fc13526b3be34ff0dc1048b00acb46ca50e
 
 @Configuration
 @EnableWebSecurity
@@ -37,21 +36,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     	        	.loginPage("/login").permitAll()
     	        .and()
     		        .logout().permitAll();
-<<<<<<< HEAD
+
 }
 	
 //	@Bean
 //    public PasswordEncoder passwordEncode() {
 //    	return new BCryptPasswordEncoder(12);
-//    }
-			
-=======
-	}
-	
+//   }
+
 	@Bean
 	public AuthenticationSuccessHandler authSuccessHandler(){
 	    return new authSuccessHandler();
 	}
->>>>>>> cadf1fc13526b3be34ff0dc1048b00acb46ca50e
 
 }
