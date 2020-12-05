@@ -6,6 +6,19 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script>
+		function switchGradeViewMode() {
+		  let GradeViewTime = document.getElementById("GradeViewTime");
+		  let GradeViewSubject = document.getElementById("GradeViewSubject");
+		  if (GradeViewTime.style.display === "none") {
+		    GradeViewTime.style.display = "table";
+		    GradeViewSubject.style.display = "none";
+		  } else {
+		    GradeViewTime.style.display = "none";
+		    GradeViewSubject.style.display = "block";
+		  }
+		} 
+	</script>
 	<title>Student Page</title>
 </head>
 <body>
@@ -22,7 +35,8 @@
     <main>
     	<h1>Grades</h1>
     	<hr>
-    	<table>
+    	<button onclick="switchGradeViewMode()">Switch view mode</button>
+    	<table id="GradeViewTime" style="display: table;">
 			<tbody>
 		        <tr style="background-color: var(--defalt);">
 		            <th>Subject</th><th>Date</th><th>Grade</th>
@@ -35,6 +49,7 @@
 		    </tbody>
 	    </table>
 	    <br><br><br>
+	    <div id="GradeViewSubject" style="display: none;">
 		<c:forEach var="subject_grades_map" items="${ subjectsAndGrades }">
 			<h2>${ subject_grades_map.key }</h2>
 	        <table>
@@ -50,6 +65,7 @@
 			    </tbody>
 		    </table>
 		</c:forEach>
+		</div>
     </main>
     <footer>
     </footer>
