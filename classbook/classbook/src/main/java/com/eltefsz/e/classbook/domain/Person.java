@@ -7,9 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 @MappedSuperclass
 public class Person {
-
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected long id;

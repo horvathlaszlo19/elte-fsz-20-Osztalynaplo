@@ -14,17 +14,10 @@ public class Teacher extends Person {
 	@ManyToMany
 	private List<SchoolClass> teacherSchoolClasses;
 	
-	
-	
 	public Teacher() {}
 	public Teacher(int age, boolean sex, @NotEmpty String name, @NotEmpty String username,
 			@NotEmpty String password, Subject subject) {
 		super();
-		this.age = age;
-		this.sex = sex;
-		this.name = name;
-		this.username = username;
-		this.password = password;
 		this.subject = subject;
 		this.userType = UserType.TEACHER;
 	}
