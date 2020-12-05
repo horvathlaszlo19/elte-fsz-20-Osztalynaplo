@@ -7,8 +7,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.eltefsz.e.classbook.domain.SchoolClass;
 import com.eltefsz.e.classbook.domain.Student;
 import com.eltefsz.e.classbook.domain.Teacher;
+import com.eltefsz.e.classbook.repository.SchoolClassRepository;
 import com.eltefsz.e.classbook.repository.StudentRepository;
 import com.eltefsz.e.classbook.repository.TeacherRepository;
 
@@ -16,24 +18,22 @@ import com.eltefsz.e.classbook.repository.TeacherRepository;
 public class TeacherService {
 
 	@Autowired
-	private StudentRepository studentrepo;
+	private StudentRepository studentRepository;
+	
+	@Autowired
+	private TeacherRepository teacherRepository;
+	
+	@Autowired
+	private SchoolClassRepository schoolClassRepository;
 	
 	public List<Student> allStudent(){
-		return studentrepo.findAll();
+		return studentRepository.findAll();
 	}
 	
 	public Optional<Student> findStudent(long id){
-		return studentrepo.findById(id);
+		return studentRepository.findById(id);
 	}
 	
-
-	private TeacherRepository teacherRepository;
-
-	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
-//	public Optional<Teacher> findTeacherOptional(String username, String password) {
-//		return teacherRepository.findByUsernameAndPassword(username, password);
-//	}
-		
 //	public void addTeacher(int age, boolean sex, String name, String username, String password, Subject subject) {
 //		Teacher teacher = new Teacher(age, sex, name, username, password, subject);
 //		teacherRepository.save(teacher);
@@ -47,14 +47,7 @@ public class TeacherService {
 		return result;
 	}
 	
-//	public Teacher findTeacher(String username, String password) {
-//		Teacher result = new Teacher();
-//		if( teacherRepository.findByUsernameAndPassword(username, password).isPresent() ) {
-//			result = teacherRepository.findByUsernameAndPassword(username, password).get();
-//		}
-//		return result;
-//	}
-	
+
 	public List<Teacher> getAllTeachers() {
 		Iterable<Teacher> foundTeachers = teacherRepository.findAll();
 		List<Teacher> result = new ArrayList<Teacher>();
@@ -62,7 +55,15 @@ public class TeacherService {
 		return result;
 	}
 	
-	//public List<SchoolClass> getSchoolCLasses(Teacher teacher) {}
+	public List<SchoolClass> getSchoolCLasses(Teacher teacher) {
+		return teacher.getTeacherSchoolClasses();
+	}
+	
+	public Teacher findTeacherByUniqueUsername(String username) {
+		return teacherRepository.findByUsername(username);
+	}
+	
+	
 	
 	
 	
