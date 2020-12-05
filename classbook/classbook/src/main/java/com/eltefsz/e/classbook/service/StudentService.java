@@ -27,7 +27,7 @@ public class StudentService {
 	
 	//TEST
 	public Student findStudentByUniqueUsername(String username) {
-		return studentRepository.findByUsername(username).get();
+		return studentRepository.findByUsername(username);
 	}
 	
 	//Controller megfelelo mukodesehez szukseges, kesobb torlendo
