@@ -7,5 +7,6 @@ import com.eltefsz.e.classbook.domain.SchoolClass;
 
 @Repository
 public interface SchoolClassRepository extends CrudRepository<SchoolClass, Integer> {
+	
 
 }
