@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.eltefsz.e.classbook.domain.Person;
+import com.eltefsz.e.classbook.repository.AdminRepository;
 import com.eltefsz.e.classbook.repository.StudentRepository;
 import com.eltefsz.e.classbook.repository.TeacherRepository;
 
@@ -20,6 +21,9 @@ public class UserDeatilsService implements UserDetailsService {
 
 	@Autowired
 	private StudentRepository studentRepository;
+	
+	@Autowired
+	private AdminRepository adminRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(String username){
@@ -28,6 +32,9 @@ public class UserDeatilsService implements UserDetailsService {
 			return new UserPrincipal(person);
 		} else if ( teacherRepository.findByUsername(username) != null ) {
 			Person person = teacherRepository.findByUsername(username);
+			return new UserPrincipal(person);
+		} else if ( adminRepository.findByUsername(username) != null ) {
+			Person person = adminRepository.findByUsername(username);
 			return new UserPrincipal(person);
 		} else {
 			throw new UsernameNotFoundException(username);

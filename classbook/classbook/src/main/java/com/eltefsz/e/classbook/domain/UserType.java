@@ -2,6 +2,6 @@ package com.eltefsz.e.classbook.domain;
 
 public enum UserType {
 	
-	TEACHER, STUDENT
+	TEACHER, STUDENT, ADMIN
 
 }
