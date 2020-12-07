@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<title>GPA Page</title>
+	<title>Subjects</title>
 </head>
 <body>
 	<header>

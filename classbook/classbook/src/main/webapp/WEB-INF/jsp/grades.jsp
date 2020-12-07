@@ -19,7 +19,7 @@
 		  }
 		} 
 	</script>
-	<title>Student Page</title>
+	<title>Grades</title>
 </head>
 <body>
 	<header>

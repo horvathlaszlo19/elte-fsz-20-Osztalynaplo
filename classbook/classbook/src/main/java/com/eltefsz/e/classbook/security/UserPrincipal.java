@@ -32,7 +32,7 @@ public class UserPrincipal implements UserDetails{
         
 		GrantedAuthority auth;
         if(person.getUserType() == UserType.TEACHER) auth = Role.ROLE_TEACHER;
-        if(person.getUserType() == UserType.ADMIN) auth = Role.ROLE_ADMIN;
+        else if(person.getUserType() == UserType.ADMIN) auth = Role.ROLE_ADMIN;
         else auth = Role.ROLE_STUDENT;
 
         list.add(auth);

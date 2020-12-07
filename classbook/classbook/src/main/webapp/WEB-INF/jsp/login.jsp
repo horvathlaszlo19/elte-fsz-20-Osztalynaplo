@@ -17,9 +17,6 @@
             <label> Password: <input type="password" name="password"/> </label>       
             <input type="submit" value="Login"/>
         </form:form>
-	    <div>
-	    	database: <a href="/h2">H2</a>
-	    </div>
 	    <p>${ errMsg }</p>
 </main>
   
