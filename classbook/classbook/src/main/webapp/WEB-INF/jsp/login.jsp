@@ -12,10 +12,11 @@
 <body>
 
 <main>
+<h3 style="margin:20px;">Log in</h3>
         <form:form action="login" method='POST'>    
             <label> User Name : <input type="text" name="username"/> </label>
             <label> Password: <input type="password" name="password"/> </label>       
-            <input type="submit" value="Login"/>
+            <input type="submit" value="Login"  style="margin:20px;"/>
         </form:form>
 	    <p>${ errMsg }</p>
 </main>
