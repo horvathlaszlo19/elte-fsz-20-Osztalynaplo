@@ -24,6 +24,11 @@ label {
 	margin: 20px;
 }
 
+a{
+	color: white;
+	font-style: italic;
+}
+
 
 /* NAVBAR */
 ul {
@@ -42,6 +47,7 @@ li a {
     text-align: center;
     padding: 15px 15px;
     text-decoration: none;
+    font-style: normal;
 }
 li a:hover {
     background-color: var(--hover);
@@ -87,3 +93,4 @@ hr{
 	margin: 30px -20px;
 	border: none;
 }
+
