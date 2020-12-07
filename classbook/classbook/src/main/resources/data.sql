@@ -1,6 +1,6 @@
-insert into School(id,name,city,daycare) values (1,'Szent László gimnázium','Budapest',true);
-insert into School_Class(id,name,school_Year,school_id) values (2,'a',9,1);
-insert into School_Class(id,name,school_Year,school_id) values (3,'b',9,1);
+insert into School(id,name,city,daycare) values (400,'Szent László gimnázium','Budapest',true);
+insert into School_Class(id,name,school_Year,school_id) values (2,'a',9,400);
+insert into School_Class(id,name,school_Year,school_id) values (3,'b',9,400);
 
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (4,'Anna','anna','{noop}anna',12,false,0,2,1);
 insert into Student(id,name,username,password,age,sex,GPA,STUDENT_SCHOOL_CLASS_ID,USER_TYPE) values (5,'Béla','bela','{noop}bela',13,true,0,2,1); 
