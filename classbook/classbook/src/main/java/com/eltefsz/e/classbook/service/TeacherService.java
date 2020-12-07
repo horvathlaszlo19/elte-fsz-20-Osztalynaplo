@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.eltefsz.e.classbook.domain.SchoolClass;
 import com.eltefsz.e.classbook.domain.Student;
+import com.eltefsz.e.classbook.domain.Subject;
 import com.eltefsz.e.classbook.domain.Teacher;
 import com.eltefsz.e.classbook.repository.SchoolClassRepository;
 import com.eltefsz.e.classbook.repository.StudentRepository;
@@ -34,10 +35,10 @@ public class TeacherService {
 		return studentRepository.findById(id);
 	}
 	
-//	public void addTeacher(int age, boolean sex, String name, String username, String password, Subject subject) {
-//		Teacher teacher = new Teacher(age, sex, name, username, password, subject);
-//		teacherRepository.save(teacher);
-//	}
+	public void addTeacher(int age, boolean sex, String name, String username, String password, Subject subject) {
+		Teacher teacher = new Teacher(age, sex, name, username, password, subject);
+		teacherRepository.save(teacher);
+	}
 
 	public Teacher findTeacherById(Long id) {
 		Teacher result = new Teacher();
